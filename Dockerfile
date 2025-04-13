@@ -12,3 +12,6 @@ EXPOSE 80
 
 # Chạy Apache trong foreground
 CMD ["apache2-foreground"]
+
+RUN chmod -R 755 /var/www/html
+
