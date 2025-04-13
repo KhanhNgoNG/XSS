@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: your_database
+      MYSQL_USER: root
+      MYSQL_PASSWORD: rootpassword
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
